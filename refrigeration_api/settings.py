@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,7 +45,7 @@ SECRET_KEY = 'django-insecure-_nwm5m_a$fuyy0q!%8k+j3+=%6&*i=4sa)_u363t3*ec%578yd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.render.com','localhost','.onrender.com' ]
+ALLOWED_HOSTS = ['.render.com','localhost','.onrender.com', '127.0.0.1' ]
 
 
 # Application definition
@@ -113,7 +117,7 @@ WSGI_APPLICATION = 'refrigeration_api.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/refrigeration_api',
+        default=os.getenv("DATABASE_URL"),
         conn_max_age=600
     )
 }
