@@ -1,20 +1,20 @@
 databases:
-  - name: zamsamdb
+  - name: mysitedb
     plan: free
-    databaseName: refrigeration_api
-    user: refrigeration_api
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
     plan: free
-    name: refrigeration_api
+    name: mysite
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn refrigeration_api.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: refrigeration_api
+          name: mysitedb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
