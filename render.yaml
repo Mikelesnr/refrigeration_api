@@ -1,8 +1,8 @@
 databases:
-  - name: mysitedb
+  - name: zamsamdb
     plan: free
-    databaseName: mysite
-    user: mysite
+    databaseName: refrigeration_api
+    user: refrigeration_api
 
 services:
   - type: web
