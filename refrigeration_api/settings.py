@@ -41,7 +41,7 @@ SECRET_KEY = 'django-insecure-_nwm5m_a$fuyy0q!%8k+j3+=%6&*i=4sa)_u363t3*ec%578yd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.render.com','localhost', ]
+ALLOWED_HOSTS = ['.render.com','localhost','.onrender.com' ]
 
 
 # Application definition
@@ -113,7 +113,7 @@ WSGI_APPLICATION = 'refrigeration_api.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgresql://postgres:postgres@localhost:5432/refrigeration_api',
         conn_max_age=600
     )
 }

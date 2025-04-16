@@ -1,8 +1,8 @@
 databases:
-  - name: mysitedb
+  - name: refrigeration_apidb
     plan: free
-    databaseName: mysite
-    user: mysite
+    databaseName: refrigeration_api
+    user: refrigeration_api
 
 services:
   - type: web
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysitedb
+          name: refrigeration_apidb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
